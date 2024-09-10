@@ -1,0 +1,33 @@
+.register-main input{
+    width: 50%;
+}
+
+.register-main textarea{
+    width: 50%;
+    height: 20vh;
+}
+
+.register-main li{
+    list-style: none;
+}
+
+.register-title {
+    text-align: center;
+}
+
+.register-contents {
+    display: flex;
+}
+
+.register-contents-left {
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    
+}
+
+.register-contents-right {
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
