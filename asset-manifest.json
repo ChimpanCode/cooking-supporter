@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cooking-supporter/static/css/main.35dc9842.css",
+    "main.js": "/cooking-supporter/static/js/main.beec6724.js",
+    "index.html": "/cooking-supporter/index.html",
+    "main.35dc9842.css.map": "/cooking-supporter/static/css/main.35dc9842.css.map",
+    "main.beec6724.js.map": "/cooking-supporter/static/js/main.beec6724.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35dc9842.css",
+    "static/js/main.beec6724.js"
+  ]
+}
