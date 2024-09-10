@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.35dc9842.css",
-    "main.js": "/static/js/main.dcb2792d.js",
-    "index.html": "/index.html",
-    "main.35dc9842.css.map": "/static/css/main.35dc9842.css.map",
-    "main.dcb2792d.js.map": "/static/js/main.dcb2792d.js.map"
+    "main.css": "/cooking-supporter/static/css/main.35dc9842.css",
+    "main.js": "/cooking-supporter/static/js/main.beec6724.js",
+    "index.html": "/cooking-supporter/index.html",
+    "main.35dc9842.css.map": "/cooking-supporter/static/css/main.35dc9842.css.map",
+    "main.beec6724.js.map": "/cooking-supporter/static/js/main.beec6724.js.map"
   },
   "entrypoints": [
     "static/css/main.35dc9842.css",
-    "static/js/main.dcb2792d.js"
+    "static/js/main.beec6724.js"
   ]
 }

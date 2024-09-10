@@ -47,7 +47,7 @@ function App() {
   }, [update]); //useEffectが第二引数の配列が変化した場合のみ実行 空の配列[]の場合初回レンダリング時のみ実行
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Navbar />
       <Routes>
         <Route
