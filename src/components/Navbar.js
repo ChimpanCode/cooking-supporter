@@ -21,7 +21,7 @@ const Navbar = () => {
       </Link>
       <Link to="/register">
         <FontAwesomeIcon icon={faHouse} />
-        レシピ/材料登録
+        レシピ/材料登録です
       </Link>
       <Link to="/tags">
         <FontAwesomeIcon icon={faHouse} />
