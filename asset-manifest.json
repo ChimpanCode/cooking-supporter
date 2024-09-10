@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/cooking-supporter/static/css/main.35dc9842.css",
-    "main.js": "/cooking-supporter/static/js/main.2a476c4a.js",
+    "main.js": "/cooking-supporter/static/js/main.56cfa4a4.js",
     "index.html": "/cooking-supporter/index.html",
     "main.35dc9842.css.map": "/cooking-supporter/static/css/main.35dc9842.css.map",
-    "main.2a476c4a.js.map": "/cooking-supporter/static/js/main.2a476c4a.js.map"
+    "main.56cfa4a4.js.map": "/cooking-supporter/static/js/main.56cfa4a4.js.map"
   },
   "entrypoints": [
     "static/css/main.35dc9842.css",
-    "static/js/main.2a476c4a.js"
+    "static/js/main.56cfa4a4.js"
   ]
 }
