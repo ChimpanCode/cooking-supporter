@@ -1,29 +1,16 @@
 import React from "react";
 import { useState } from "react";
-import "./Sidebar.css";
-//import ingredientFilter from "./ingredientFilter";
-import IngredientFilter from "./IngredientFilter";
-import { storage } from "../firebase";
-import { ref, getDownloadURL } from "firebase/storage";
 import Select from "react-select";
 import { Button } from "@mui/material";
 import TargetIngredients from "./TargetIngredients";
+import "./Sidebar.css";
 
 const Sidebar = ({
-  recipes,
-  activeRecipe,
-  setActiveRecipe,
   ingredientTags,
-  setIngredientTags,
-  ingredientFilterVal,
-  setIngredientFilterVal,
+
   targetIngredients,
   setTargetIngredients,
 }) => {
-  //const [filterVal, setFilterVal] = useState(""); //材料検索の入力欄
-
-  //文字列は空文字だとfalseとして判定されるので、if文に使える
-
   //ingredientTagsをオブジェクトの配列に変換
   const newOptions = [];
   ingredientTags.map((tag, index) =>
@@ -44,27 +31,48 @@ const Sidebar = ({
     ]);
   };
 
+  //<Select>コンポーネントのカスタマイズ
+  const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      width: "100%",
+      borderRadius: "none",
+      border: "1px solid gray",
+      backgroundColor: "#eee",
+      textAlign: "center",
+      "&:hover": {
+        border: "2px solid red",
+        cursor: "pointer",
+      },
+    }),
+  };
+
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
         <h1>使用したい材料でレシピを検索</h1>
       </div>
-      <div>
+      <div className="app-sidebar-select">
         <Select
           options={newOptions}
           value={selectedOption}
-          placeholder="材料を検索してください"
+          placeholder="材料を選択"
           onChange={handleChange}
+          styles={customStyles}
+          className="app-sidebar-select-left"
         />
-        <Button variant="contained" onClick={addTargetIngredient}>
-          検索条件に追加する
+        <Button
+          variant="outlined"
+          onClick={addTargetIngredient}
+          className="app-sidebar-select-right"
+        >
+          ＋
         </Button>
       </div>
       <TargetIngredients
         targetIngredients={targetIngredients}
         setTargetIngredients={setTargetIngredients}
       />
-      <Button variant="outlined">この条件でレシピを検索</Button>
     </div>
   );
 };

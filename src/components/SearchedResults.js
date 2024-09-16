@@ -1,16 +1,6 @@
 import React from "react";
-import { useState } from "react";
-import "./Main.css";
 import RecipeCard from "./RecipeCard";
-import PreviewRecipe from "./PreviewRecipe";
 import "./SearchedResults.css";
-
-//料理レシピ検索結果を表示(右側)
-// (ingredient) => ingredient === ingredientFilterVal || !ingredientFilterVal
-// 条件判定を関数にして (recipe) => recipe === kansu(recipe.ingredients) という説もある そうすればtargetIngredients主体にできる
-
-//const sss = Object.keys[recipes].length;
-//console.log(sss);
 
 const SearchResults = ({
   recipes,
@@ -19,11 +9,13 @@ const SearchResults = ({
   as,
   setAs,
   targetIngredients,
-  setTargetIngredients,
 }) => {
+  //検索条件の材料を含むレシピかどうか判定
   const checkIngredients = (ingredients) => {
     return targetIngredients.every((targetIngredient) =>
-      ingredients.some((ingredient) => ingredient === targetIngredient)
+      ingredients.some(
+        (ingredient) => ingredient.indexOf(targetIngredient) !== -1
+      )
     );
   };
 

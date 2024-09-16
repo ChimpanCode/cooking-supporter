@@ -1,6 +1,4 @@
 //db関係の処理を行う関数をまとめる
-import React from "react";
-import { useState } from "react";
 import {
   doc,
   addDoc,
@@ -12,8 +10,6 @@ import {
   collection,
 } from "firebase/firestore";
 import { auth, db } from "../firebase";
-import { storage } from "../firebase";
-import { ref, getDownloadURL } from "firebase/storage";
 
 //新たなレシピを作成しdbに追加する
 const addRecipeToDatabase = async (newRecipe) => {

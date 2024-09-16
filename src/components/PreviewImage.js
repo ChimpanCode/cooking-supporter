@@ -1,16 +1,19 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { storage } from "../firebase";
 import { ref, getDownloadURL } from "firebase/storage";
+import noImage from "../images/noimage.png";
+import "./PreviewImage.css";
 
 const PreviewImage = ({ imageName }) => {
   const [prevUrl, setPrevUrl] = useState("");
   const [error, setError] = useState("");
 
+  //storageから画像を持ってくるためのurlを構成
   const imageUrl =
     "gs://cooking-supporter-b9f69.appspot.com/images/" + imageName;
 
-  const noImageUrl = "./logo192.PNG"; //atcoder-record\src\components\noimage.png
+  const noImageUrl = "./images/noimage.png"; //atcoder-record\src\components\noimage.png
 
   //画像の名前をpropsとして受け取れば任意の画像を表示できる
   const gsReference = ref(storage, imageUrl);
@@ -41,7 +44,7 @@ const PreviewImage = ({ imageName }) => {
   return imageName ? (
     <img src={prevUrl} alt={error} width={200} height={200} />
   ) : (
-    <img src={noImageUrl} alt="なし" />
+    <img src={noImage} alt="画像がありません" className="preview-image" />
   );
 };
 

@@ -7,8 +7,6 @@ import PreviewImage from "./PreviewImage";
 //import firebase, { storage } from "../firebase/firebase";
 
 const ImageUploader = ({ imageName, setImageName }) => {
-  //const [uploadedFile, setUploadedFire] = useState({}); //読み込んだファイルを一時的に保存
-  //この関数をレシピ登録時に実行すればよいはず
   const OnFileUploadToFirebase = (e) => {
     const file = e.target.files[0];
     //setUploadedFire(file);

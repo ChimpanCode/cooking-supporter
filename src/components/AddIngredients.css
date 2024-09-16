@@ -1,0 +1,15 @@
+.add-ingredients {
+    /*border: 3px solid green;*/
+}
+
+.add-ingredients-form {
+    display: flex;
+}
+
+.add-ingredients-form-left {
+    width: 50%;
+}
+
+.add-ingredients-form-right {
+    width: 50%;
+}

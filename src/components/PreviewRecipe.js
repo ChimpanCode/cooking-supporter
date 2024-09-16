@@ -1,7 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { storage } from "../firebase";
-import { ref, getDownloadURL } from "firebase/storage";
+import { useState } from "react";
 import PreviewImage from "./PreviewImage";
 import { deleteRecipeFromDatabase } from "../hooks/handleDatabase";
 import "./PreviewRecipe.css";
@@ -9,9 +7,7 @@ import { Button } from "@mui/material";
 
 const PreviewRecipe = ({
   recipes,
-  setRecipes,
   activeRecipe,
-  setActiveRecipe,
   as,
   setAs,
   update,
@@ -24,47 +20,76 @@ const PreviewRecipe = ({
     setAs(!as);
   };
 
-  const [focusRecipe, setForcusRecipe] = useState({});
-  recipes
-    .filter((recipe) => recipe.id === activeRecipe)
-    .map((recipe) => {
-      setForcusRecipe(recipe);
-    });
-
   return (
     <div className="preview-recipe-main">
-      <Button
-        onClick={() => {
-          setAs(!as);
-        }}
-      >
-        ←検索結果に戻る
-      </Button>
+      <div></div>
 
-      {recipes
-        .filter((recipe) => recipe.id === activeRecipe)
-        .map((recipe) => {
-          return (
-            <React.Fragment key={recipe.id}>
-              <h1>{recipe.title}</h1>
-              <Button variant="contained" onClick={() => deleteRecipe(recipe)}>
-                レシピを削除
-              </Button>
+      <div className="preview-recipe-contents">
+        {recipes
+          .filter((recipe) => recipe.id === activeRecipe)
+          .map((recipe) => {
+            return (
+              <React.Fragment key={recipe.id}>
+                <div className="">
+                  <div className="top">
+                    <div className="back">
+                      <Button
+                        onClick={() => {
+                          setAs(!as);
+                        }}
+                      >
+                        ←検索結果に戻る
+                      </Button>
+                    </div>
+                    <div className="delete">
+                      <Button
+                        variant="contained"
+                        onClick={() => deleteRecipe(recipe)}
+                      >
+                        レシピを削除
+                      </Button>
+                    </div>
+                  </div>
+                  <h2>{recipe.title}</h2>
 
-              <PreviewImage imageName={recipe.imageName} />
-              <div>
-                <a href={recipe.source}>レシピページへ</a>
-              </div>
-              <div className="aaaaa">{"料理工程: " + recipe.process}</div>
-              <div>{"材料: "}</div>
-              <div>
-                {recipe.ingredients.map((ingredient, i) => {
-                  return <li key={i}>{ingredient}</li>;
-                })}
-              </div>
-            </React.Fragment>
-          );
-        })}
+                  <PreviewImage imageName={recipe.imageName} />
+                  <div className="url">
+                    {URL.canParse(recipe.source) ? (
+                      <a
+                        href={recipe.source}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        元レシピへ
+                      </a>
+                    ) : (
+                      "無効なURLです"
+                    )}
+                  </div>
+                  <div className="bottom">
+                    <div className="left">
+                      <h2>料理メモ</h2>
+                      <div
+                        className="process"
+                        style={{ whiteSpace: "pre-line" }}
+                      >
+                        {recipe.process}
+                      </div>
+                    </div>
+                    <div className="right">
+                      <h2>材料</h2>
+                      <div>
+                        {recipe.ingredients.map((ingredient, i) => {
+                          return <li key={i}>{ingredient}</li>;
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+      </div>
     </div>
   );
 };

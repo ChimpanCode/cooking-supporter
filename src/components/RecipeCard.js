@@ -1,6 +1,7 @@
 import React from "react";
-import "./RecipeCard.css";
 import PreviewImage from "./PreviewImage";
+import "./RecipeCard.css";
+
 //ここのonClickを内容閲覧に用いる
 const RecipeCard = ({ recipe, activeRecipe, setActiveRecipe, as, setAs }) => {
   return (

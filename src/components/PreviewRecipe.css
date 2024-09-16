@@ -1,0 +1,33 @@
+.preview-recipe-main {
+    
+    
+}
+
+.preview-recipe-contents {
+    
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+
+.bottom {
+    display: flex;
+}
+
+.left {
+    
+    width: 50%;
+}
+
+.right {
+    
+    width: 50%;
+}
+
+.process {
+    /*border: 1px solid #22212067;*/
+}

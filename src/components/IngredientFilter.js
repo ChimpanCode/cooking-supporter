@@ -1,12 +1,8 @@
 import React from "react";
-import { useState } from "react";
 
-//検索用のサイドバーにもちいる検索バー←react-selectでいいのでいらない
+//検索用のサイドバーにもちいる検索バーの自作←react-selectを現在は利用
 const IngredientFilter = ({
-  ingredients,
-  setIngredients,
   ingredientTags,
-  setIngredientTags,
   ingredientFilterVal,
   setIngredientFilterVal,
   targetIngredients,

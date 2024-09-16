@@ -1,14 +1,11 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import PreviewTags from "./components/PreviewTags";
 import { useState, useEffect } from "react";
-import uuid from "react-uuid";
-import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
-import { auth, db } from "./firebase";
 import { getRecipes, getIngredientTags } from "./hooks/handleDatabase";
+import "./App.css";
 
 function App() {
   //登録したレシピのリストのUseState
@@ -20,15 +17,11 @@ function App() {
   //登録した材料タグのリストのステート これの定義はアプリ全体で使うのでここでいい　これもFirebaseに保存する
   const [ingredientTags, setIngredientTags] = useState([]);
 
-  //レシピ検索用のフィルターのステート←ここにある必要なくね
-  const [ingredientFilterVal, setIngredientFilterVal] = useState("");
-
   //このステートが変化したときUseEffectによりdbからレシピとタグを読み込む
   const [update, setUpdate] = useState(true);
 
   //FireBaseからレシピと材料タグを読み込む処理
   useEffect(() => {
-    //console.log("ここまでもいけてない");
     const fetchData = async () => {
       try {
         //dbにリクエストを実行
@@ -55,13 +48,9 @@ function App() {
           element={
             <Home
               recipes={recipes}
-              setRecipes={setRecipes}
               activeRecipe={activeRecipe}
               setActiveRecipe={setActiveRecipe}
               ingredientTags={ingredientTags}
-              setIngredientTags={setIngredientTags}
-              ingredientFilterVal={ingredientFilterVal}
-              setIngredientFilterVal={setIngredientFilterVal}
               update={update}
               setUpdate={setUpdate}
             />
@@ -72,9 +61,6 @@ function App() {
           element={
             <Register
               ingredientTags={ingredientTags}
-              setIngredientTags={setIngredientTags}
-              ingredientFilterVal={ingredientFilterVal}
-              setIngredientFilterVal={setIngredientFilterVal}
               update={update}
               setUpdate={setUpdate}
             />
@@ -85,7 +71,6 @@ function App() {
           element={
             <PreviewTags
               ingredientTags={ingredientTags}
-              setIngredientTags={setIngredientTags}
               update={update}
               setUpdate={setUpdate}
             />
