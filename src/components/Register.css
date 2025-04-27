@@ -1,0 +1,49 @@
+.register-main input{
+    width: 50%;
+}
+
+.register-main textarea{
+    width: 50%;
+    height: 20vh;
+}
+
+.register-main li{
+    list-style: none;
+}
+
+.register-main li::before {
+  position: relative;
+  top: -2px;
+  left: -4px;
+ 
+  display: inline-block;
+ 
+  width: 8px;
+  height: 8px;
+ 
+  content: '';
+ 
+  border-radius: 100%;
+  background: rgba(14, 13, 13, 0.815);
+}
+
+.register-title {
+    text-align: center;
+}
+
+.register-contents {
+    display: flex;
+}
+
+.register-contents-left {
+    width: 50%;
+    border: 2px solid rgb(23, 24, 23);
+    padding: 10px;
+    
+}
+
+.register-contents-right {
+    width: 50%;
+    border: 2px solid rgb(23, 24, 23);
+    padding: 10px;
+}

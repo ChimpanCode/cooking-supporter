@@ -1,0 +1,36 @@
+.app-sidebar{
+    width: 30%;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+    background-color: rgb(238, 243, 243);
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+}
+
+.app-sidebar-header{
+    text-align: center;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.app-sidebar-select{
+    display: flex;
+}
+
+.app-sidebar-select-left{
+    width: 80%;
+}
+
+.app-sidebar-select-right{
+    width: 20%;
+}
+
+.app-sidebar-button {
+    gap: 10px;
+}
+
+.app-sidebar-header h1 {
+    margin: 0;
+}
+
